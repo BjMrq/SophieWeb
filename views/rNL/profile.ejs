@@ -1,0 +1,72 @@
+<% include ../partials/header %>
+
+<section id="header" class="jumbotron">
+  <h1 class="intro display-2">  <%= user.name %> </h1>
+  <hr>
+</section>
+
+<div class="container">
+  <% if(error && error.length > 0){ %>
+    <div class="alert alert-danger" role="alert">
+      <%= error %>
+    </div>
+  <% } %>
+  <% if(success && success.length > 0){ %>
+    <div class="alert alert-success" role="alert">
+    <%= success %>
+    </div>
+  <% } %>
+</div>
+
+ <div class="container pt-4">
+   <div class="row">
+     <div class="col-sm-4 pr-5">
+       <div class="row d-flex justify-content-center">
+         <img class="profilePic" src="<%= user.image%>" >
+       </div>
+         <form action="/user/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+           <label class="mt-3 d-flex justify-content-center" for="image">Choose a Profile Picture:</label>
+           <br>
+           <input class="btn-input" type="file" id="image" name="image" accept="image/*">
+           <button class="btn btn-custom justify-self-center d-inline-block mt-2" type="submit" >Edit your Profile Picture!</button>
+        </form>
+
+       <div class="row">
+         <div class="col-sm-12 pt-4">
+            <h1>Your comments:</h1>
+             <ul class="list-group ">
+               <% user.comments.forEach(function (comment){ %>
+                <li class="list-group-item"> <%= comment.pictitle %> - <%= comment.text %> </li>
+                <% }) %>
+              </ul>
+          </div>
+        </div>
+      </div>
+     <div class="col-sm-4 pl-5">
+       <form class="p-0 d-inline-block" action="/user/<%= user.id %>?_method=PUT" method="POST">
+         <label for="name">Name</label>
+         <input id="name" class="form-control" type="text" name="user[name]" value="<%= user.name %>">
+         <br>
+         <label for="surname">Surname</label>
+         <input id="surname" class="form-control" type="text" name="user[surname]" value="<%= user.surname %>">
+
+       </div>
+       <div class="col-sm-4 pl-4">
+
+         <label for="name">Facebook</label>
+         <input id="name" class="form-control" type="text" name="user[facebook]" value="<%= user.facebook %>">
+         <label for="name">Istagram</label>
+         <input id="name" class="form-control" type="text" name="user[instagram]" value="<%= user.istagram %>">
+        <button class="btn btn-custom mt-3 d-inline-block mt-5" type="submit" >Edit your Profile!</button>
+    </form>
+     </div>
+
+
+   </div>
+
+
+</div>
+
+
+
+<% include ../partials/footer %>

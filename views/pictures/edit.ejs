@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+
+<section id="header" class="jumbotron">
+  <h1 class="intro display-2"> Edit <%= picture.title %> </h1>
+  <hr>
+</section>
+
+<div class="container">
+  <% if(error && error.length > 0){ %>
+    <div class="alert alert-danger" role="alert">
+      <%= error %>
+    </div>
+  <% } %>
+  <% if(success && success.length > 0){ %>
+    <div class="alert alert-success" role="alert">
+    <%= success %>
+    </div>
+  <% } %>
+</div>
+
+<div class="container">
+  <div class="form">
+    <form action="/collection/<%= picture._id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" class="form-control" type="text" name="picture[title]" value="<%= picture.title %>">
+      </div>
+      <div class="form-group">
+        <label for="image">Image</label>
+        <br>
+        <input class="btn-input" type="file" id="image" name="image" accept="image/*" value="<%= picture.image %>" >
+      </div>
+      <div class="form-group">
+        <label for="description">Descriptiont</label>
+        <input id="description" class="form-control" type="text" name="picture[description]" value="<%= picture.description %>" >
+      </div>
+        <button class="btn btn-custom btn-block" type="submit">Submit!</button>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer %>

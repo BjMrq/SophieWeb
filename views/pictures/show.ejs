@@ -1,0 +1,66 @@
+<% include ../partials/header %>
+
+<section id="header" class="jumbotron">
+  <h1 class="intro display-2"> <%= picture.title %> </h1>
+  <hr>
+</section>
+
+<div class="container">
+  <% if(error && error.length > 0){ %>
+    <div class="alert alert-danger" role="alert">
+      <%= error %>
+    </div>
+  <% } %>
+  <% if(success && success.length > 0){ %>
+    <div class="alert alert-success" role="alert">
+    <%= success %>
+    </div>
+  <% } %>
+</div>
+
+<section id="moreAbout">
+  <div class="container">
+    <div class="card mx-auto col-lg-10 p-0">
+      <img class="rounded img-thumbnail" src="<%= picture.image %>" alt="<%= picture.title %>" oncontextmenu="return false;" />
+      <div class="container">
+        <% if(currentUser && picture.author.id.equals(currentUser._id)){ %>
+          <a class="btn btn-custom mt-3 d-inline-block" href="/collection/<%= picture._id %>/edit">Edit</a>
+          <form class="p-0 d-inline-block" method="POST" action="/collection/<%= picture._id %>?_method=DELETE"><button class="m-0 btn btn-custom2 mt-3 d-inline-block" type="submit" name="button">Delete</button></form>
+        <% } %>
+        <a class="showAuthor pt-2 d-inline-block" href="/watch/<%=picture.author.id%>"> © <%= picture.author.name %> <%= picture.author.surname %></a>
+        <br>
+        <p class="text-justify mt-3"> <%= picture.description %> </p>
+        <hr class="showhr">
+        <% picture.comments.forEach(function (comment){ %>
+          <p class="d-inline-block"><strong><a href="/watch/<%=comment.author.id%>"><img class="showProfilePic " src="<%= comment.author.image%>" ><%= comment.author.name %> <%= comment.author.surname %></a></strong>- <%= comment.created.toDateString() %>
+          </p>
+          <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+            <form class="p-0 d-inline-block showCommentDelete" method="POST" action="/collection/<%= picture._id %>/comments/<%= comment._id%>?_method=DELETE">
+              <button class="ml-2 showCommentDelete" type="submit" name="button">
+                <i class="fas fa-trash-alt"></i>
+              </button>
+            </form>
+            <a class="flex-end d-inline-block showCommentEdit" data-toggle="collapse" href="#collapse<%= comment._id %>">
+              <i class="fas fa-pencil-alt"></i>
+          </a>
+          <% } %>
+          <p> <%= comment.text %> </p>
+          <div id="collapse<%= comment._id %>" class="panel-collapse collapse">
+            <form action="/collection/<%= picture._id %>/comments/<%= comment._id%>?_method=PUT" method="POST">
+              <input class="form-control" type="text" name="comment[text]" value="<%= comment.text %>"> <button class="btn btn-custom mt-3 d-inline-block" type="submit" >Edit your comment</button>
+          </form>
+          </div>
+          <br>
+        <% }) %>
+      </div>
+      <form class="m-1" action="/collection/<%= picture._id %>/comments" method="POST">
+        <div class="form-group m-0">
+          <input class="form-control" type="text" name="comment[text]" placeholder="Add a new Comment">
+          <button class="btn btn-customComment" type="submit">Add a new comment!</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<% include ../partials/footer %>

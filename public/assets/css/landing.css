@@ -1,0 +1,137 @@
+/* Landing Page Css */
+
+@font-face {
+  font-family: 'Ranga';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ranga Regular'), local('Ranga-Regular'), url(./fonts/Ranga/Ranga-Regular.ttf) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Tahu';
+  src: url(./fonts/Tahu/Tahu!.ttf) format('truetype');
+}
+
+body {
+  background-color: #000;
+}
+
+.landing-header {
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  padding-top: 40vh;
+}
+
+.intro{
+  animation-duration: 4s;
+}
+
+.enter{
+  animation-duration: 2s;
+}
+
+.landing-header h1 {
+  font-family: 'Tahu';
+  letter-spacing: 5px;
+  word-spacing: 13px;
+  font-size: 76px;
+  color: #fff;
+}
+
+.landing-header a {
+  font-family: 'Ranga';
+  font-size:26px;
+}
+
+.btn-custom{
+  background-color: #563d7c;
+  color: white;
+  border:none;
+}
+
+a:active {
+  background-color: #563d7c;
+  color: white;
+}
+
+a:hover {
+  background-color: #563d7c;
+  color: white;
+}
+
+a:focus {
+    background: #563d7c;
+    transform: scale(0.99);
+    background-color: #563d7c;
+    color: white;
+}
+
+.slideshow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.slideshow li {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 0;
+  animation: imageAnimation 30s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+  background-image: url(../../backgroundslider/IMG_1303.jpg)
+}
+.slideshow li:nth-child(2) {
+  background-image: url(../../backgroundslider/IMG_9955.jpg);
+  animation-delay: 6s;
+}
+.slideshow li:nth-child(3) {
+  background-image: url(../../backgroundslider/IMG_9885.jpg);
+  animation-delay: 12s;
+}
+.slideshow li:nth-child(4) {
+  background-image: url(../../backgroundslider/IMG_9687.jpg);
+  animation-delay: 18s;
+}
+.slideshow li:nth-child(5) {
+  background-image: url(../../backgroundslider/IMG_0463.jpg);
+  animation-delay: 24s;
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    animation-timing-function: ease-in;
+  }
+  10% {
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+  20% {
+    opacity: 1
+  }
+  30% {
+    opacity: 0
+  }
+}
+
+/* Older browser support - .no-cssanimations class added by modernizr */
+.no-cssanimations .slideshow li {
+	opacity: 1;
+}

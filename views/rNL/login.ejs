@@ -1,0 +1,39 @@
+<% include ../partials/header %>
+
+<section id="header" class="jumbotron">
+  <h1 class="intro display-2"> Log In </h1>
+  <hr>
+</section>
+
+<div class="container">
+  <% if(error && error.length > 0){ %>
+    <div class="alert alert-danger" role="alert">
+      <%= error %>
+    </div>
+  <% } %>
+  <% if(success && success.length > 0){ %>
+    <div class="alert alert-success" role="alert">
+    <%= success %>
+    </div>
+  <% } %>
+</div>
+
+<div class="container">
+  <div class="form">
+    <form action="/login" method="POST">
+      <div class="form-group">
+        <label for="email">Your email</label>
+        <input id="email" class="form-control" type="email" name="email" placeholder="Welcome back, what is your email?" required>
+      </div>
+      <div class="form-group mb-1">
+        <label for="password">Your password</label>
+        <input id="password" class="form-control" type="password" name="password" placeholder="Bip Bip Password needed here" required>
+      </div>
+      <a href="/forgot">Forgot your password?</a>
+        <button class="btn btn-custom btn-block mt-3" type="submit">Log In!</button>
+    </form>
+    <p class="text-center mt-3"> Or <a  href="/register" class="">Register</a></p>
+  </div>
+</div>
+
+<% include ../partials/footer %>

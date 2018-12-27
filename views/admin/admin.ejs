@@ -1,0 +1,52 @@
+<% include ../partials/header %>
+
+<section id="header" class="jumbotron">
+  <h1 class="intro display-2">Admin Panel</h1>
+  <hr>
+</section>
+
+<section class="container">
+  <p>Number of users: <%= users.length%></p>
+    <% users.forEach( function (user){ %>
+      <div class="row py-4">
+       <div class="col-sm-3">
+           <p>User <%= user.id %>
+       </div>
+       <div class="col-sm-2">
+        <form class="p-0 d-inline-block" action="/user/<%= user.id %>?_method=PUT" method="POST">
+          <label for="name d-inline-flex">Name:</label>
+          <input id="name" class="form-control d-inline-flex" type="text" name="user[name]" value="<%= user.name %>">
+        </form>
+       </div>
+       <div class="col-sm-2">
+         <form class="p-0 d-inline-block" action="/user/<%= user.id %>?_method=PUT" method="POST">
+           <label for="surname d-inline-flex">Surname:</label>
+           <input id="surname" class="form-control d-inline-flex" type="text" name="user[surname]" value="<%= user.surname %>">
+        </form>
+       </div>
+       <div class="col-sm-4">
+        <form class="p-0 d-inline-block" action="/user/<%= user.id %>?_method=PUT" method="POST">
+         <label for="email d-inline-flex">email:</label>
+         <input id="surname" class="form-control d-inline-flex" type="text" name="user[surname]" value="<%= user.email %>">
+       </form>
+       </div>
+       <div class="col-sm-1">
+          <a class="flex-end d-inline-block showCommentEdit" data-toggle="collapse" href="#collapse<%= user.id %>"> Show Comments (<%= user.comments.length%>)</a>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div id="collapse<%= user._id %>" class="panel-collapse collapse">
+              <ul class="list-group">
+                <% user.comments.forEach(function (comment){ %>
+                 <li class="list-group-item"> <%= comment.pictitle %> - <%= comment.text %> </li>
+                 <% }) %>
+               </ul>
+             </div>
+           </div>
+         </div>
+       </div>
+       <hr>
+  <% });  %>
+</section>
+
+<% include ../partials/footer %>

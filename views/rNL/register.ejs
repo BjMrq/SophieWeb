@@ -1,0 +1,49 @@
+<% include ../partials/header %>
+
+<section id="header" class="jumbotron">
+  <h1 class="intro display-2"> Register </h1>
+  <hr>
+</section>
+
+<div class="container">
+  <% if(error && error.length > 0){ %>
+    <div class="alert alert-danger" role="alert">
+      <%= error %>
+    </div>
+  <% } %>
+  <% if(success && success.length > 0){ %>
+    <div class="alert alert-success" role="alert">
+    <%= success %>
+    </div>
+  <% } %>
+</div>
+
+<div class="container">
+  <div class="form">
+    <form action="/user/register" method="POST">
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input id="name" class="form-control" type="name" name="name" placeholder="What's your name?" required>
+      </div>
+      <div class="form-group">
+        <label for="surname">Your surname</label>
+        <input id="surname" class="form-control" type="surname" name="surname" placeholder="And your surname?" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Your email</label>
+        <input id="email" class="form-control" type="email" name="email" placeholder="What about your email?" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Your password</label>
+        <input id="password" class="form-control" type="password" name="password" placeholder="And finaly your password (pick a good one)" required>
+      </div>
+      <div class="form-group">
+        <label for="confirm">Confirm your password</label>
+        <input id="confirm" class="form-control" type="password" name="confirm" placeholder="Confirm your password" required>
+      </div>
+        <button class="btn btn-custom btn-block" type="submit">Register!</button>
+    </form>
+  </div>
+</div>
+
+<% include ../partials/footer %>
