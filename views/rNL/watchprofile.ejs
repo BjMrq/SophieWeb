@@ -31,10 +31,23 @@
     </div>
     <div class="col-sm-5 ">
       <h1>Social:</h1>
-      <p>facebook:</p>
-      <%= user.facebook %>
-      <p>Istagram:</p>
-      <%= user.instagram %>
+      <br>
+      <div class="row">
+        <% if(user.facebook === ""){ %>
+          <p>I didn't connected my facebook yet</p>
+        <% } %>
+        <% if (user.facebook) { %>
+        <p><a href="<%=user.facebook%>">My Facebook</a></p>
+        <% } %>
+      </div>
+      <div class="row">
+        <% if(user.instagram === ""){ %>
+          <p>I didn't connected my Instagram yet</p>
+        <% } %>
+        <% if(user.instagram ) { %>
+        <p><a href="<%=user.instagram%>">My Instagram</a></p>
+        <% } %>
+      </div>
     </div>
 
   </div>
