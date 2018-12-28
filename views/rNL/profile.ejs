@@ -54,8 +54,8 @@
    <div class="col-xs-12 col-md-8 pt-4 profileComments">
       <h1 >Your comments:</h1>
        <ul class="list-group">
-         <% user.comments.forEach(function (comment){ %>
-          <li class="list-group-item"> <%= comment.pictitle %> - <%= comment.text %> </li>
+         <% user.comments.slice().reverse().forEach(function (comment){ %>
+          <li class="list-group-item"> <%= comment.pictitle %> - <%= comment.text %> - <%= comment.created.toDateString() %></li>
           <% }) %>
         </ul>
     </div>
