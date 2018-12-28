@@ -24,30 +24,26 @@
       <img class="profilePic" src="<%= user.image%>" >
     </div>
 
-    <div class="col-xs-12 col-md-4 ">
+    <div class="col-xs-12 col-md-4 mt-2">
       <h1>Info:</h1>
       <p><%= user.name %> <%= user.surname %></p>
-
     </div>
+
     <div class="col-xs-12 col-md-5 ">
       <h1>Social:</h1>
-      <br>
-      <div class="row">
         <% if(user.facebook === ""){ %>
           <p>I didn't connected my facebook yet</p>
         <% } %>
         <% if (user.facebook) { %>
         <p><a href="<%=user.facebook%>">My Facebook</a></p>
         <% } %>
-      </div>
-      <div class="row">
+
         <% if(user.instagram === ""){ %>
           <p>I didn't connected my Instagram yet</p>
         <% } %>
         <% if(user.instagram ) { %>
         <p><a href="<%=user.instagram%>">My Instagram</a></p>
         <% } %>
-      </div>
     </div>
 
   </div>

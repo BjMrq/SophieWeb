@@ -130,6 +130,9 @@ label{
   height: 200px;
 }
 
+.profileComments{
+  width: 100%;
+}
 
 .btn-input{
   background-color: #563d7c;
