@@ -25,8 +25,7 @@
          <img class="profilePic" src="<%= user.image%>" >
        </div>
          <form action="/user/<%= user.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
-           <label class="mt-3 d-flex justify-content-center" for="image">Choose a Profile Picture:</label>
-           <br>
+           <label class="mt-1 d-flex justify-content-center" for="image">Choose a Profile Picture:</label>
            <input class="btn-input" type="file" id="image" name="image" accept="image/*">
            <button class="btn btn-custom justify-self-center d-inline-block mt-2" type="submit" >Edit your Profile Picture!</button>
         </form>
