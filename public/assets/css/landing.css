@@ -98,10 +98,10 @@ a:focus {
   background-image: url(../../backgroundslider/IMG_1303.jpg)
 }
 .slideshow li:nth-child(2) {
-  background-image: url(../../backgroundslider/IMG_9955.jpg);
+  background-image: url(../../backgroundslider/IMG_9885.jpg);
   animation-delay: 6s;
 }
-.slideshow li:nth-child(3) {
+/* .slideshow li:nth-child(3) {
   background-image: url(../../backgroundslider/IMG_9885.jpg);
   animation-delay: 12s;
 }
@@ -112,7 +112,7 @@ a:focus {
 .slideshow li:nth-child(5) {
   background-image: url(../../backgroundslider/IMG_0463.jpg);
   animation-delay: 24s;
-}
+} */
 
 @keyframes imageAnimation {
   0% {
