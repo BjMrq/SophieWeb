@@ -34,8 +34,9 @@ router.post("/login", passport.authenticate("local",
   {
     successRedirect: "/collection",
     failureRedirect: "/login",
-    badRequestMessage : 'Missing username or password.',
-    failureFlash: true
+    badRequestMessage : 'Hum sounds like it is missing username or password.',
+    failureFlash: true,
+    successFlash : "Hi there! Welcome back."
   }), function(req, res){
 });
 
