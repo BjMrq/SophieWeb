@@ -18,13 +18,6 @@
   <!-- My CSS -->
   <link rel="stylesheet" type="text/css" href="/assets/css/landing.css">
 
-  <script>
-    if (! $.fn.modal) {
-    document.write('<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">');
-    document.write('<link rel="stylesheet" type="text/css" href="/assets/css/animated.css">');
-      }
-  </script>
-
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/ImagesSophie/Sophie.png" />
 
@@ -37,9 +30,31 @@
   <meta property="og:description" content="Sophie Madonna a young photographer in Montreal share some of her favorite pictures" />
   <meta property="og:image" content="https://res.cloudinary.com/syphblog/image/upload/v1545947285/giey6xjpul3z2jdoxo2j.jpg" />
 
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-TL65JCX');
+  </script>
+  <!-- End Google Tag Manager -->
+
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TL65JCX" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <div class="container">
     <% if(error && error.length > 0){ %>
