@@ -91,7 +91,7 @@ a:focus {
   background-repeat: no-repeat;
   opacity: 0;
   z-index: 0;
-  animation: imageAnimation 30s linear infinite;
+  animation: imageAnimation 18s linear infinite;
 }
 
 .slideshow li:nth-child(1) {
@@ -101,18 +101,11 @@ a:focus {
   background-image: url(../../backgroundslider/IMG_9885.jpg);
   animation-delay: 6s;
 }
-/* .slideshow li:nth-child(3) {
-  background-image: url(../../backgroundslider/IMG_9885.jpg);
+ .slideshow li:nth-child(3) {
+  background-image: url(../../backgroundslider/IMG_9955.jpg);
   animation-delay: 12s;
 }
-.slideshow li:nth-child(4) {
-  background-image: url(../../backgroundslider/IMG_9687.jpg);
-  animation-delay: 18s;
-}
-.slideshow li:nth-child(5) {
-  background-image: url(../../backgroundslider/IMG_0463.jpg);
-  animation-delay: 24s;
-} */
+
 
 @keyframes imageAnimation {
   0% {
