@@ -11,10 +11,20 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css">
+
   <!-- FontAwesome CSS -->
-  <link rel="stylesheet" href="/assets/css/static/styles/fontawesome/css/all.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
   <!-- My CSS -->
   <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+
+  <!--Fallbacks -->
+  <script>
+    if (! $.fn.modal) {
+    document.write('<link rel="stylesheet" href="/assets/css/static/styles/fontawesome/css/all.css">');
+      }
+  </script>
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/ImagesSophie/Sophie.png" />
 
