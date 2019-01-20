@@ -1,5 +1,6 @@
 require('dotenv').config();
 var express               = require("express"),
+    secure                = require('express-force-https'),
     bodyParser            = require("body-parser"),
     mongoose              = require("mongoose"),
     passport              = require("passport"),
@@ -29,6 +30,8 @@ var user = require ("./models/user");
 
 // App setup
 var app = express();
+
+app.use(secure);
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + "/public"));
@@ -72,5 +75,5 @@ app.use(otherRoutes);
 
 // Listen
 app.listen(process.env.PORT, process.env.IP, function(){
-  console.log("Server has started on port 3000! Let's go!");
+  console.log("Server has started! Let's go!");
 });
