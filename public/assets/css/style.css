@@ -21,6 +21,7 @@
 
 body{
   padding-top: 50px;
+  height:100%;
 }
 
 .navbar {
@@ -262,5 +263,6 @@ label{
 }
 
 .page-footer {
+  {
   background-color: RGBA(86, 61, 124, 0.1);
 }
