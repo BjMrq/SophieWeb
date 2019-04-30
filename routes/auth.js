@@ -85,7 +85,7 @@ router.post("/forgot", function(req, res){
         to: user.email,
         from: "Cracagnou",
         subject: "Your reset password link!",
-        text: "Hey there! Here is your link to reset your password, just click on it or copy it in your browser " + "http://" + req.headers.host + "/reset/" + token + '\n\n' + ". Have a good day!"
+        text: "Hey there! Here is your link to reset your password, just click on it or copy it in your browser " + "https://" + req.headers.host + "/reset/" + token + '\n\n' + ". Have a good day!"
       };
       smtpTransport.sendMail(mailOptions, function(err){
         console.log("password reset e-mail sent to " + user.email);
