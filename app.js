@@ -71,9 +71,8 @@ app.use(userRoutes);
 app.use("/collection/:id/comments",commentRoutes);
 app.use(otherRoutes);
 app.use(function(req, res, next){
-  res.status(404);
   req.flash("error", "Oupsy we could not find what you where looking for..");
-  res.redirect('/collection');
+  res.status(404).redirect('/collection');
 });
 
 // Listen
