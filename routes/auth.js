@@ -77,7 +77,7 @@ router.post("/forgot", function(req, res){
       var smtpTransport = nodemailer.createTransport({
         service: "Gmail",
         auth: {
-          user: "bmarquiscom@gmail.com",
+          user: "rigantona.cracagnou@gmail.com",
           pass: process.env.GMAILPW,
         }
       });
@@ -101,9 +101,9 @@ router.post("/forgot", function(req, res){
 
 // Update password
 router.get("/reset/:token", function(req, res){
-  user.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: {$gt: Date.nom() } }, function(err, user){
+  user.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: {$gt: Date.now() } }, function(err, user){
     if (!user){
-      req.flash("error", "password reset token is invalid or has expired, please try again or contact us.");
+      req.flash("error", "Your password reset token is invalid or has expired, please try again or contact us.");
       res.redirect("/forgot");
     }
     res.render("reset", {token: req.params.token});
