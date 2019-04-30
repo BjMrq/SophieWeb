@@ -132,7 +132,9 @@ router.post("/reset/:token", function(req, res){
         }
       });
     },
-  ]);
+  ], function(err) {
+  res.redirect('/collection');
+  });
 });
 
 module.exports = router;
