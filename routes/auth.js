@@ -64,7 +64,7 @@ router.post("/forgot", function(req, res){
       user.findOne({email: req.body.email}, function(err, user){
         if (!user){
           req.flash("error", "Are you sure it is the right email? We didn't find any account with that email adress.");
-          return res.redirect("/forgot");
+          return res.redirect("rNL/forgot");
         }
         user.resetPasswordToken = token;
         user.resetPasswordExpires = Date.now() + 3600000;
@@ -95,7 +95,7 @@ router.post("/forgot", function(req, res){
     }
   ], function(err){
     if (err) return next(err);
-    res.redirect("/forgot");
+    res.redirect("rNL/forgot");
   });
 });
 
@@ -104,7 +104,7 @@ router.get("/reset/:token", function(req, res){
   user.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: {$gt: Date.now() } }, function(err, user){
     if (!user){
       req.flash("error", "Your password reset token is invalid or has expired, please try again or contact us.");
-      res.redirect("/forgot");
+      res.redirect("rNL/forgot");
     }
     res.render("rNL/reset", {token: req.params.token});
   });
@@ -123,18 +123,14 @@ router.post("/reset/:token", function(req, res){
           user.setPassword(req.body.password, function(err){
             user.resetPasswordToken = undefined;
             user.resetPasswordExpires = undefined;
-            user.save(function(err){
-              req.logIn(user, function(err) {
-                done(err, user);
-              });
-            });
+            user.save();
           });
+          req.flash('success', 'Your password has been changed!');
+          res.redirect("/collection/");
         }
       });
     },
-  ], function(err) {
-  res.redirect('/collection');
-  });
+  ]);
 });
 
 module.exports = router;
