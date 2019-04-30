@@ -125,8 +125,8 @@ router.post("/reset/:token", function(req, res){
             user.resetPasswordExpires = undefined;
             user.save();
           });
-          req.flash('success', 'Your password has been changed!');
-          res.redirect("/collection/");
+          req.flash('success', 'Your password has been changed! You can login');
+          res.redirect("/login");
         }
       });
     },
