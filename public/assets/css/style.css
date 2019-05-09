@@ -82,45 +82,59 @@ label{
 }
 
 .collectionPreview{
-  box-shadow: 1px 3px 6px #3d233c;
-  transition-duration: 0.3s;
+  -webkit-box-shadow: 1px 3px 6px #3d233c;
+          box-shadow: 1px 3px 6px #3d233c;
+  -webkit-transition-duration: 0.3s;
+       -o-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 .collectionPreview:hover{
-  box-shadow: 2px 5px 12px #3d233c;
-  transform: scale(1.02);
+  -webkit-box-shadow: 2px 5px 12px #3d233c;
+          box-shadow: 2px 5px 12px #3d233c;
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
 }
 
 .collectionPreview:active{
-  box-shadow: 0px 1px 2px #3d233c;
-  transition-duration: 0.1s;
+  -webkit-box-shadow: 0px 1px 2px #3d233c;
+          box-shadow: 0px 1px 2px #3d233c;
+  -webkit-transition-duration: 0.1s;
+       -o-transition-duration: 0.1s;
+          transition-duration: 0.1s;
 }
 
 input:focus{
   outline: none !important;
   border: 1px solid #563d7c !important;
-  box-shadow: 1px 2px 8px  #563d7c !important;
+  -webkit-box-shadow: 1px 2px 8px  #563d7c !important;
+          box-shadow: 1px 2px 8px  #563d7c !important;
 }
 
 .btn-customComment:focus{
   outline: none !important;
-  box-shadow: 1px 2px 8px  #563d7c !important;
+  -webkit-box-shadow: 1px 2px 8px  #563d7c !important;
+          box-shadow: 1px 2px 8px  #563d7c !important;
 }
 
 .btn-customComment:hover{
   outline: none !important;
-  box-shadow: 0 1px 6px  #563d7c !important;
+  -webkit-box-shadow: 0 1px 6px  #563d7c !important;
+          box-shadow: 0 1px 6px  #563d7c !important;
   top: 2px !important;
 }
 
 .btn-custom:focus{
   outline: none !important;
-  box-shadow: 1px 2px 8px  #563d7c !important;
+  -webkit-box-shadow: 1px 2px 8px  #563d7c !important;
+          box-shadow: 1px 2px 8px  #563d7c !important;
 }
 
 .btn-custom:hover{
   outline: none !important;
-  box-shadow: 0 1px 6px  #563d7c !important;
+  -webkit-box-shadow: 0 1px 6px  #563d7c !important;
+          box-shadow: 0 1px 6px  #563d7c !important;
   top: 2px !important;
 }
 
