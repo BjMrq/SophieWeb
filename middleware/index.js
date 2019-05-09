@@ -20,7 +20,7 @@ middlewareObj.isAdmin = function(req, res, next){
 
 middlewareObj.isCommentAuthor = function(req, res, next){
   if (req.isAuthenticated()){
-    picture.findById(req.params.comment_id, function(err, foundcomment){
+    comment.findById(req.params.comment_id, function(err, foundcomment){
       if (err || !foundcomment){
         req.flash("error", "Couldn't find this comments!");
         console.log(err);
