@@ -84,9 +84,9 @@ label{
 .collectionPreview{
   -webkit-box-shadow: 1px 3px 6px #3d233c;
           box-shadow: 1px 3px 6px #3d233c;
-  -webkit-transition-duration: 0.4s;
-       -o-transition-duration: 0.4s;
-          transition-duration: 0.4s;
+  -webkit-transition-duration: 0.33s;
+       -o-transition-duration: 0.33s;
+          transition-duration: 0.33s;
 }
 
 .collectionPreview:hover{
