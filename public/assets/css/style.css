@@ -84,9 +84,6 @@ label{
 .collectionPreview{
   -webkit-box-shadow: 1px 3px 6px #3d233c;
           box-shadow: 1px 3px 6px #3d233c;
-  -webkit-transition-timing-function: ease-out;
-      -ms-transition-timing-function: ease-out;
-          transition-timing-function: ease-out;
   -webkit-transition-duration: 0.3s;
        -o-transition-duration: 0.3s;
           transition-duration: 0.3s;
