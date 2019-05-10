@@ -84,17 +84,17 @@ label{
 .collectionPreview{
   -webkit-box-shadow: 1px 3px 6px #3d233c;
           box-shadow: 1px 3px 6px #3d233c;
-  -webkit-transition-duration: 0.2s;
-       -o-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  -webkit-transition-duration: 0.4s;
+       -o-transition-duration: 0.4s;
+          transition-duration: 0.4s;
 }
 
 .collectionPreview:hover{
   -webkit-box-shadow: 2px 6px 12px #3d233c;
           box-shadow: 2px 6px 12px #3d233c;
-  -webkit-transform: scale(1.02);
-      -ms-transform: scale(1.02);
-          transform: scale(1.02);
+  -webkit-transform: scale(1.022);
+      -ms-transform: scale(1.022);
+          transform: scale(1.022);
 }
 
 .collectionPreview:active{
