@@ -90,8 +90,8 @@ label{
 }
 
 .collectionPreview:hover{
-  -webkit-box-shadow: 2px 5px 12px #3d233c;
-          box-shadow: 2px 5px 12px #3d233c;
+  -webkit-box-shadow: 2px 6px 12px #3d233c;
+          box-shadow: 2px 6px 12px #3d233c;
   -webkit-transform: scale(1.02);
       -ms-transform: scale(1.02);
           transform: scale(1.02);
